@@ -1,0 +1,59 @@
+{
+  "architecture": "CSI-SpectraNet",
+  "novel_components": [
+    "LearnedPhaseCorrection",
+    "MotionAwareConv (raw+vel+acc)",
+    "FrequencyInteraction (FFT spectral filter)",
+    "CrossModalAttention (amp<->phase)",
+    "TemporalFPN (3-scale pyramid with self-attention)",
+    "MultiPoolAggregation (attn+max+avg+std)"
+  ],
+  "total_params": 2005429,
+  "input_shape": [
+    500,
+    232
+  ],
+  "best_val_f1": 0.9635956204094802,
+  "test_results": {
+    "test": {
+      "accuracy": 0.9634,
+      "nonfall_f1": 0.968,
+      "nonfall_precision": 0.9946,
+      "nonfall_recall": 0.9427,
+      "fall_f1": 0.9574,
+      "fall_precision": 0.9244,
+      "fall_recall": 0.9928,
+      "weighted_f1": 0.9636
+    }
+  },
+  "baselines": {
+    "MLP": {
+      "acc": 92.16,
+      "f1": 92.17
+    },
+    "LSTM": {
+      "acc": 94.93,
+      "f1": 94.92
+    },
+    "ResNet-18": {
+      "acc": 94.88,
+      "f1": 94.89
+    },
+    "Transformer": {
+      "acc": 94.28,
+      "f1": 94.26
+    },
+    "PatchTST": {
+      "acc": 94.03,
+      "f1": 94.03
+    },
+    "TimesFormer1D": {
+      "acc": 93.86,
+      "f1": 93.87
+    },
+    "ViT": {
+      "acc": 93.58,
+      "f1": 93.59
+    }
+  }
+}
