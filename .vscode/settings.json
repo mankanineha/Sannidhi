@@ -1,0 +1,18 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.openOcdConfigs": [
+    "board/esp32-wrover-kit-3.3v.cfg"
+  ],
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32"
+  },
+  "idf.flashType": "UART",
+  "idf.currentSetup": "/Users/nehamankani/.espressif/v6.1/esp-idf",
+  "idf.port": "/dev/tty.usbserial-0001",
+  "clangd.path": "/Users/nehamankani/.espressif/tools/esp-clangd/esp-21.1.3_20260408/esp-clangd/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/Users/nehamankani/Naya wala Sannidhi/sannidhi-main-20260920T115902Z-1-001/sannidhi-main/build"
+  ]
+}

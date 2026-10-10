@@ -1,0 +1,27 @@
+{
+  "senior_id": "SNR-8492",
+  "senior": {
+    "name": "Senior Citizen ji",
+    "preferred_name": "Senior Citizen ji",
+    "age": 73,
+    "medical_conditions": [
+      "Hypertension",
+      "Heart Condition",
+      "Parkinson’s / Tremors",
+      "Joint Pain / Arthritis"
+    ],
+    "home_address": "Living Room Zone",
+    "language": "hi"
+  },
+  "caregiver": {
+    "name": "Neha Mankani",
+    "relationship": "Family Member",
+    "phone": "+919987019246",
+    "whatsapp": "+919987019246"
+  },
+  "device_settings": {
+    "room_placement": "Living Room Corner",
+    "privacy_mode": true,
+    "sensitivity": "balanced"
+  }
+}

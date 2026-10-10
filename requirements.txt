@@ -1,7 +1,0 @@
-torch>=2.0.0
-numpy
-matplotlib
-pyserial
-twilio
-python-dotenv
-SpeechRecognition
