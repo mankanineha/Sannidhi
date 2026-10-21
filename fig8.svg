@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<rect x="175.0" y="20" width="230" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="34.68" text-anchor="middle" font-size="13">Decision module sends event</text>
+<text x="290.0" y="50.68" text-anchor="middle" font-size="13">to conversational layer</text>
+<polyline points="393.0,20 385.0,11" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="9" text-anchor="end" font-size="13">S801</text>
+<rect x="175.0" y="70" width="230" height="30" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="89.68" text-anchor="middle" font-size="13">Create incident; retrieve context</text>
+<polyline points="393.0,70 385.0,61" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="59" text-anchor="end" font-size="13">S802</text>
+<polyline points="290,56 290,70" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="114" width="230" height="30" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="133.68" text-anchor="middle" font-size="13">State machine starts workflow</text>
+<polyline points="393.0,114 385.0,105" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="103" text-anchor="end" font-size="13">S803</text>
+<polyline points="290,100 290,114" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="158" width="230" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="180.68" text-anchor="middle" font-size="13">Speak prompt in preferred language</text>
+<polyline points="393.0,158 385.0,149" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="147" text-anchor="end" font-size="13">S804</text>
+<polyline points="290,144 290,158" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="208" width="230" height="30" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="227.68" text-anchor="middle" font-size="13">Capture response</text>
+<polyline points="393.0,208 385.0,199" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="197" text-anchor="end" font-size="13">S805</text>
+<polyline points="290,194 290,208" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="252" width="230" height="30" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="271.68" text-anchor="middle" font-size="13">Detect speech</text>
+<polyline points="393.0,252 385.0,243" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="241" text-anchor="end" font-size="13">S806</text>
+<polyline points="290,238 290,252" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="296" width="230" height="30" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="315.68" text-anchor="middle" font-size="13">Transcribe audio</text>
+<polyline points="393.0,296 385.0,287" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="285" text-anchor="end" font-size="13">S807</text>
+<polyline points="290,282 290,296" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="340" width="230" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290.0" y="362.68" text-anchor="middle" font-size="13">Interpret response; recognised intent</text>
+<polyline points="393.0,340 385.0,331" fill="none" stroke="black" stroke-width="1"/>
+<text x="383.0" y="329" text-anchor="end" font-size="13">S808</text>
+<polyline points="290,326 290,340" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="290,390.0 400.0,422.0 290,454.0 180.0,422.0" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="290" y="419.0" text-anchor="middle" font-size="13">Safety-policy controller</text>
+<text x="290" y="435.0" text-anchor="middle" font-size="13">evaluates state and intent</text>
+<text x="170" y="402.0" text-anchor="end" font-size="13">S809</text>
+<polyline points="290,376 290,390" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="15" y="482.0" width="120" height="40" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="75.0" y="498.68" text-anchor="middle" font-size="13">Apply confirmation</text>
+<text x="75.0" y="514.6800000000001" text-anchor="middle" font-size="13">policy</text>
+<polyline points="123,482.0 115,473.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="113" y="471.0" text-anchor="end" font-size="13">S810</text>
+<polyline points="180,422.0 75,422.0" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="75,422.0 75,482.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="120" y="416.0" text-anchor="middle" font-size="11">Clearly okay</text>
+<rect x="145" y="482.0" width="110" height="40" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="200.0" y="498.68" text-anchor="middle" font-size="13">Ask clarifying</text>
+<text x="200.0" y="514.6800000000001" text-anchor="middle" font-size="13">question</text>
+<polyline points="243,482.0 235,473.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="233" y="471.0" text-anchor="end" font-size="13">S811</text>
+<polyline points="235,438.0 200,462.0" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="200,462.0 200,482.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="175" y="468.0" text-anchor="end" font-size="11">Unclear response</text>
+<polyline points="200,522.0 200,552.0 8,552.0 8,223 175.0,223" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="320" y="482.0" width="115" height="40" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="377.5" y="498.68" text-anchor="middle" font-size="13">Wait for configured</text>
+<text x="377.5" y="514.6800000000001" text-anchor="middle" font-size="13">timeout</text>
+<polyline points="423,482.0 415,473.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="413" y="471.0" text-anchor="end" font-size="13">S812</text>
+<polyline points="345,438.0 375,462.0" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="375,462.0 375,482.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="395" y="468.0" text-anchor="start" font-size="11">No usable response</text>
+<polygon points="375,552.0 432.5,577.0 375,602.0 317.5,577.0" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="375" y="574.0" text-anchor="middle" font-size="13">Response</text>
+<text x="375" y="590.0" text-anchor="middle" font-size="13">received?</text>
+<text x="310" y="562.0" text-anchor="end" font-size="13">S813</text>
+<polyline points="375,522.0 375,552.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="317,577.0 15,577.0 15,223 175.0,223" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="220" y="569.0" text-anchor="middle" font-size="11">Response received</text>
+<rect x="470" y="482.0" width="145" height="40" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="542.5" y="498.68" text-anchor="middle" font-size="13">Trigger caregiver</text>
+<text x="542.5" y="514.6800000000001" text-anchor="middle" font-size="13">escalation</text>
+<polyline points="603,482.0 595,473.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="593" y="471.0" text-anchor="end" font-size="13">S814</text>
+<polyline points="400,422.0 540,422.0" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="540,422.0 540,482.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="470" y="416.0" text-anchor="middle" font-size="11">Needs help or reports pain</text>
+<polyline points="432,577.0 540,577.0 540,597.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="475" y="569.0" text-anchor="middle" font-size="11">Still no response</text>
+<rect x="470" y="597.0" width="145" height="40" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="542.5" y="613.68" text-anchor="middle" font-size="13">Send caregiver</text>
+<text x="542.5" y="629.68" text-anchor="middle" font-size="13">notification</text>
+<polyline points="603,597.0 595,588.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="593" y="586.0" text-anchor="end" font-size="13">S815</text>
+<polyline points="540,522.0 540,597.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="470" y="657.0" width="145" height="40" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="542.5" y="673.68" text-anchor="middle" font-size="13">Track delivery and</text>
+<text x="542.5" y="689.68" text-anchor="middle" font-size="13">acknowledgement</text>
+<polyline points="603,657.0 595,648.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="593" y="646.0" text-anchor="end" font-size="13">S816</text>
+<polyline points="540,637.0 540,657.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="190" y="692.0" width="220" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="300.0" y="706.68" text-anchor="middle" font-size="13">Save outcome;</text>
+<text x="300.0" y="722.68" text-anchor="middle" font-size="13">update incident store</text>
+<polyline points="398,692.0 390,683.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="388" y="681.0" text-anchor="end" font-size="13">S817</text>
+<polyline points="75,522.0 75,710.0 190,710.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="540,697.0 540,710.0 410,710.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<ellipse cx="545" cy="45" rx="115" ry="22" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="545" y="42" text-anchor="middle" font-size="13">Scheduled check-in or</text>
+<text x="545" y="58" text-anchor="middle" font-size="13">medication reminder</text>
+<text x="545" y="18" text-anchor="middle" font-size="13">S818</text>
+<polyline points="430,45 290,45 290,70" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 8</text>
+</svg>

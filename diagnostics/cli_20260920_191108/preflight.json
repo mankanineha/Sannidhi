@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-09-20T19:11:08+05:30",
+  "mode": "cli",
+  "project": "C:\\Users\\Supriya Nayak\\Downloads\\sannidhi-main-20260920T115902Z-1-001\\sannidhi-main",
+  "python": "C:\\Users\\Supriya Nayak\\Downloads\\sannidhi-main-20260920T115902Z-1-001\\sannidhi-main\\venv\\Scripts\\python.exe",
+  "python_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 181 Stepping 0, GenuineIntel",
+  "port": "COM5",
+  "baud": 921600,
+  "files": {
+    "cli_inference.py": {
+      "exists": true,
+      "bytes": 3933
+    },
+    "dashboard/backend/app.py": {
+      "exists": true,
+      "bytes": 6960
+    },
+    "csi_spectranet_best.onnx": {
+      "exists": true,
+      "bytes": 371671
+    },
+    "dashboard/frontend/index.html": {
+      "exists": true,
+      "bytes": 7649
+    }
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "serial": "3.5",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.53.0",
+    "onnxruntime": "1.30.0"
+  },
+  "serial_ports": [
+    {
+      "device": "COM3",
+      "description": "Standard Serial over Bluetooth link (COM3)",
+      "hwid": "BTHENUM\\{00001101-0000-1000-8000-00805F9B34FB}_LOCALMFG&0000\\7&25CA33A4&0&000000000000_00000000"
+    },
+    {
+      "device": "COM4",
+      "description": "Standard Serial over Bluetooth link (COM4)",
+      "hwid": "BTHENUM\\{00001101-0000-1000-8000-00805F9B34FB}_VID&000102B0_PID&0000\\7&25CA33A4&0&5484503A9577_C00000000"
+    }
+  ],
+  "serial_probe": {
+    "open": false,
+    "error": "SerialException: could not open port 'COM5': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)"
+  }
+}

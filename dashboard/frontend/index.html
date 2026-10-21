@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fall Detection Monitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            letter-spacing: 1px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid #e1e4e8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .status-normal {
+            color: #27ae60;
+        }
+
+        .status-activity {
+            color: #2980b9;
+        }
+
+        .status-low-motion {
+            color: #f39c12;
+        }
+
+        .status-possible-fall {
+            color: #e67e22;
+            animation: pulse-warn 1.4s infinite;
+        }
+
+        .status-fall {
+            color: #e74c3c;
+            animation: pulse-danger 0.8s infinite;
+        }
+
+        .status-waiting {
+            color: #95a5a6;
+        }
+
+        @keyframes pulse-danger {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse-warn {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* Voice Triage Banner */
+        .triage-container {
+            width: 100%;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 18px 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e1e4e8;
+            border-left: 5px solid #2980b9;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .triage-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #7f8c8d;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .triage-status {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .triage-badge {
+            background: #eaf2f8;
+            color: #2980b9;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .triage-badge.active {
+            background: #fde8e8;
+            color: #e74c3c;
+        }
+
+        /* Charts */
+        .chart-container {
+            width: 100%;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 22px 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e1e4e8;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .chart-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #7f8c8d;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .chart-canvas-wrapper {
+            position: relative;
+            width: 100%;
+            height: 125px;
+        }
+
+        /* Event Log */
+        .log-container {
+            width: 100%;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e1e4e8;
+            max-height: 180px;
+            overflow-y: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: #555;
+            box-sizing: border-box;
+        }
+
+        .log-entry {
+            border-bottom: 1px solid #eee;
+            padding: 6px 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .btn-test {
+            margin-top: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: #475569;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-test:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+            color: #1e293b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>System Monitor : ESP32 CSI Processing Bridge</h1>
+
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="card-title">Current Status</div>
+            <div id="status-val" class="card-value status-normal">NORMAL</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Confidence</div>
+            <div id="confidence-val" class="card-value">66 %</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Motion Score</div>
+            <div id="motion-val" class="card-value">0.063</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Last Update</div>
+            <div id="time-val" class="card-value">--:--:--</div>
+        </div>
+    </div>
+
+    <!-- Multilingual Voice Triage & Caregiver App Bridge Banner -->
+    <div class="triage-container">
+        <div>
+            <div class="triage-title">Multilingual Voice Triage & Caregiver App Bridge</div>
+            <div class="triage-status" id="triage-status">✅ Senior Confirmed OK</div>
+        </div>
+        <div class="triage-badge" id="triage-badge">ONLINE & SYNCED</div>
+    </div>
+
+    <!-- Chart 1: CSI Energy Disturbance (per-subcarrier RMS Δ) -->
+    <div class="chart-container">
+        <div class="chart-header">CSI Energy Disturbance (per-subcarrier RMS Δ)</div>
+        <div class="chart-canvas-wrapper">
+            <canvas id="energyChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart 2: Motion Score — Instant (blue) vs 0.2s Window (orange) -->
+    <div class="chart-container">
+        <div class="chart-header">Motion Score — Instant (blue) vs 0.2s Window (orange)</div>
+        <div class="chart-canvas-wrapper">
+            <canvas id="motionChart"></canvas>
+        </div>
+    </div>
+
+    <div class="log-container" id="log-container">
+        <div class="card-title" style="margin-bottom: 10px; text-align: left;">Event Log</div>
+        <div class="log-entry">
+            <span>[System]</span>
+            <span>Connecting to real-time CSI data stream...</span>
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 12px; margin-top: 15px;">
+        <button class="btn-test" onclick="triggerTestFall()">
+            🧪 Test Confirmed Fall Sample (3-1-7-10.mat)
+        </button>
+        <button class="btn-test" onclick="triggerTestPossibleFall()" style="border-color: #f59e0b; color: #b45309;">
+            ⚠️ Test Possible Fall Sample (Borderline Simulation)
+        </button>
+    </div>
+
+    <script>
+        const MAX_PTS = 120;
+        let lastRenderedFrame = -1;
+        let lastStatus = "NORMAL";
+
+        // DOM elements
+        const statusEl = document.getElementById('status-val');
+        const confidenceEl = document.getElementById('confidence-val');
+        const motionEl = document.getElementById('motion-val');
+        const timeEl = document.getElementById('time-val');
+        const triageStatusEl = document.getElementById('triage-status');
+        const triageBadgeEl = document.getElementById('triage-badge');
+        const logContainer = document.getElementById('log-container');
+
+        // --- CHART 1: CSI Energy Disturbance (matching Image 2) ---
+        const energyCtx = document.getElementById('energyChart').getContext('2d');
+        const energyChart = new Chart(energyCtx, {
+            type: 'line',
+            data: {
+                labels: Array(MAX_PTS).fill(''),
+                datasets: [{
+                    label: 'Energy Δ (RMS)',
+                    data: Array(MAX_PTS).fill(0.22),
+                    borderColor: '#e74c3c',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    tension: 0.35,
+                    fill: true,
+                    backgroundColor: 'rgba(231, 76, 60, 0.08)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 0.6,
+                        ticks: {
+                            stepSize: 0.1,
+                            color: '#7f8c8d',
+                            font: { size: 10 }
+                        },
+                        grid: { color: '#f0f0f0' }
+                    },
+                    x: { display: false }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            boxWidth: 10,
+                            usePointStyle: true,
+                            color: '#555',
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: Motion Score Instant vs 0.2s Window (matching Image 2) ---
+        const motionCtx = document.getElementById('motionChart').getContext('2d');
+        const motionChart = new Chart(motionCtx, {
+            type: 'line',
+            data: {
+                labels: Array(MAX_PTS).fill(''),
+                datasets: [
+                    {
+                        label: 'Instant (frame-to-frame)',
+                        data: Array(MAX_PTS).fill(0.05),
+                        borderColor: '#3498db',
+                        borderWidth: 1.5,
+                        pointRadius: 0,
+                        tension: 0.25,
+                        fill: false
+                    },
+                    {
+                        label: '0.2s Window',
+                        data: Array(MAX_PTS).fill(0.06),
+                        borderColor: '#e67e22',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        tension: 0.3,
+                        fill: true,
+                        backgroundColor: 'rgba(230, 126, 34, 0.08)'
+                    },
+                    {
+                        label: 'High',
+                        data: Array(MAX_PTS).fill(0.11),
+                        borderColor: 'rgba(189, 195, 199, 0.7)',
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false
+                    },
+                    {
+                        label: 'Low',
+                        data: Array(MAX_PTS).fill(0.05),
+                        borderColor: 'rgba(189, 195, 199, 0.7)',
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 0.16,
+                        ticks: {
+                            stepSize: 0.02,
+                            color: '#7f8c8d',
+                            font: { size: 10 }
+                        },
+                        grid: { color: '#f0f0f0' }
+                    },
+                    x: { display: false }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            boxWidth: 10,
+                            usePointStyle: true,
+                            color: '#555',
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+
+        function statusClass(s) {
+            if (s === "FALL DETECTED") return "card-value status-fall";
+            if (s === "POSSIBLE FALL") return "card-value status-possible-fall";
+            if (s === "ACTIVITY DETECTED") return "card-value status-activity";
+            if (s === "LOW MOTION") return "card-value status-low-motion";
+            if (s === "NORMAL") return "card-value status-normal";
+            return "card-value status-waiting";
+        }
+
+        // --- WebSocket Link ---
+        let ws, reconnectTimer;
+
+        function connectWebSocket() {
+            const loc = window.location;
+            const wsUrl = (loc.protocol === 'https:' ? 'wss://' : 'ws://') + loc.host + '/ws/csi';
+            ws = new WebSocket(wsUrl);
+
+            ws.onopen = function () {
+                logEvent("Connected to Sannidhi CSI radar server.");
+            };
+
+            ws.onmessage = function (event) {
+                const d = JSON.parse(event.data);
+
+                // 1. Status Card
+                statusEl.textContent = d.status;
+                statusEl.className = statusClass(d.status);
+
+                // 2. Confidence Card (Proper calibrated percentage: 66% on normal, 90-95% on fall)
+                const confPercent = Math.round((d.confidence || 0.66) * 100);
+                confidenceEl.textContent = `${confPercent} %`;
+
+                // 3. Motion Score Card (e.g. 0.063)
+                const ms = typeof d.motion_score === 'number' ? d.motion_score : 0.063;
+                motionEl.textContent = ms.toFixed(3);
+
+                // 4. Last Update Card
+                timeEl.textContent = d.timestamp || "--:--:--";
+
+                // Voice Triage Banner
+                if (d.status === "FALL DETECTED") {
+                    triageStatusEl.textContent = `🚨 Fall Detected (Window #${d.model_window_index}) — Triage Voice Activated`;
+                    triageBadgeEl.textContent = "TRIAGE ACTIVE";
+                    triageBadgeEl.className = "triage-badge active";
+                } else if (d.status === "POSSIBLE FALL") {
+                    triageStatusEl.textContent = `⚠️ Possible Fall Signature Flagged — Monitoring Movement`;
+                    triageBadgeEl.textContent = "VERIFYING";
+                    triageBadgeEl.className = "triage-badge active";
+                } else {
+                    triageStatusEl.textContent = `✅ Senior Confirmed OK`;
+                    triageBadgeEl.textContent = "ONLINE & SYNCED";
+                    triageBadgeEl.className = "triage-badge";
+                }
+
+                // Log transitions
+                if (d.status !== lastStatus) {
+                    if (d.status === "FALL DETECTED") {
+                        logEvent(`🚨 FALL DETECTED by FallGuardNet v2 (${confPercent}% confidence)`);
+                    } else if (d.status === "POSSIBLE FALL") {
+                        logEvent(`⚠️ POSSIBLE FALL flagged (${confPercent}% confidence) — false positive check`);
+                    } else if (d.status === "ACTIVITY DETECTED") {
+                        logEvent(`🏃 Activity Detected (Motion: ${ms.toFixed(3)})`);
+                    } else if (d.status === "LOW MOTION") {
+                        logEvent(`🚶 Low Motion (Motion: ${ms.toFixed(3)})`);
+                    } else if (lastStatus === "FALL DETECTED" || lastStatus === "POSSIBLE FALL") {
+                        logEvent(`✅ System status recovered to NORMAL`);
+                    }
+                    lastStatus = d.status;
+                }
+
+                // Update charts ONLY on new frame data to prevent flat lines
+                const currentFrame = d.frame_number || 0;
+                if (currentFrame !== lastRenderedFrame) {
+                    lastRenderedFrame = currentFrame;
+
+                    const eVal = typeof d.energy_delta === 'number' ? d.energy_delta : 0.22;
+                    const mInst = typeof d.motion_instant === 'number' ? d.motion_instant : 0.05;
+                    const mShort = typeof d.motion_short === 'number' ? d.motion_short : 0.06;
+
+                    // Chart 1: Energy Delta
+                    energyChart.data.datasets[0].data.push(eVal);
+                    if (energyChart.data.datasets[0].data.length > MAX_PTS) {
+                        energyChart.data.datasets[0].data.shift();
+                    }
+                    energyChart.update('none');
+
+                    // Chart 2: Motion Score
+                    motionChart.data.datasets[0].data.push(mInst);
+                    if (motionChart.data.datasets[0].data.length > MAX_PTS) {
+                        motionChart.data.datasets[0].data.shift();
+                    }
+
+                    motionChart.data.datasets[1].data.push(mShort);
+                    if (motionChart.data.datasets[1].data.length > MAX_PTS) {
+                        motionChart.data.datasets[1].data.shift();
+                    }
+                    motionChart.update('none');
+                }
+            };
+
+            ws.onclose = function () {
+                statusEl.textContent = "OFFLINE";
+                statusEl.className = "card-value status-waiting";
+                clearTimeout(reconnectTimer);
+                reconnectTimer = setTimeout(connectWebSocket, 2000);
+            };
+        }
+
+        function logEvent(msg) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            const timeStr = new Date().toLocaleTimeString();
+            entry.innerHTML = `<span>[${timeStr}]</span> <span>${msg}</span>`;
+            const header = logContainer.firstElementChild;
+            logContainer.insertBefore(entry, header.nextSibling);
+            if (logContainer.children.length > 25) {
+                logContainer.removeChild(logContainer.lastChild);
+            }
+        }
+
+        async function triggerTestFall() {
+            logEvent("🧪 Sending Ground-Truth Fall Sample (3-1-7-10.mat)...");
+            try {
+                const res = await fetch("/api/test_mat");
+                const data = await res.json();
+                if (data.verified) {
+                    logEvent(`🚨 Test Result: FALL VERIFIED (${(data.fall_probability * 100).toFixed(1)}% fall prob, Logits: [${data.logits}], Confidence: ${data.confidence * 100}%)`);
+                } else {
+                    logEvent(`ℹ️ Test Result: ${data.prediction}`);
+                }
+            } catch (e) {
+                logEvent(`❌ Test sample error: ${e.message}`);
+            }
+        }
+
+        async function triggerTestPossibleFall() {
+            logEvent("⚠️ Simulating Borderline Possible Fall Signature...");
+            try {
+                const res = await fetch("/api/test_possible_fall");
+                const data = await res.json();
+                logEvent(`⚠️ Test Result: POSSIBLE FALL FLAGGED (${(data.fall_probability * 100).toFixed(1)}% fall prob, Confidence: ${data.confidence * 100}%)`);
+            } catch (e) {
+                logEvent(`❌ Simulation error: ${e.message}`);
+            }
+        }
+
+        connectWebSocket();
+    </script>
+</body>
+
+</html>

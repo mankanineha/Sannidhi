@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<rect x="225.0" y="25" width="240" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="44.68" text-anchor="middle" font-size="13">Receive frame;</text>
+<text x="345.0" y="60.68" text-anchor="middle" font-size="13">validate 52 values</text>
+<polyline points="453.0,25 445.0,16" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="14" text-anchor="end" font-size="13">S401</text>
+<rect x="225.0" y="101" width="240" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="123.68" text-anchor="middle" font-size="13">Append frame to buffer</text>
+<polyline points="453.0,101 445.0,92" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="90" text-anchor="end" font-size="13">S402</text>
+<polyline points="345,71 345,101" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="345,167.0 465.0,209.0 345,251.0 225.0,209.0" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345" y="206.0" text-anchor="middle" font-size="13">Buffer holds</text>
+<text x="345" y="222.0" text-anchor="middle" font-size="13">950 frames?</text>
+<text x="471.0" y="197.0" text-anchor="start" font-size="13">S403</text>
+<polyline points="345,137 345,167" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="225.0" y="281" width="240" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="300.68" text-anchor="middle" font-size="13">Replace non-finite</text>
+<text x="345.0" y="316.68" text-anchor="middle" font-size="13">values by zero</text>
+<polyline points="453.0,281 445.0,272" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="270" text-anchor="end" font-size="13">S404</text>
+<polyline points="345,251 345,281" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="225.0" y="357" width="240" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="376.68" text-anchor="middle" font-size="13">Global z-score normalisation</text>
+<text x="345.0" y="392.68" text-anchor="middle" font-size="13">of 950 × 52 window</text>
+<polyline points="453.0,357 445.0,348" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="346" text-anchor="end" font-size="13">S405</text>
+<polyline points="345,327 345,357" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="225.0" y="433" width="240" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="452.68" text-anchor="middle" font-size="13">Run FallGuardNet;</text>
+<text x="345.0" y="468.68" text-anchor="middle" font-size="13">obtain two logits</text>
+<polyline points="453.0,433 445.0,424" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="422" text-anchor="end" font-size="13">S406</text>
+<polyline points="345,403 345,433" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="225.0" y="509" width="240" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="531.68" text-anchor="middle" font-size="13">Softmax; fall probability p</text>
+<polyline points="453.0,509 445.0,500" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="498" text-anchor="end" font-size="13">S407</text>
+<polyline points="345,479 345,509" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="345,575.0 465.0,617.0 345,659.0 225.0,617.0" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345" y="622.0" text-anchor="middle" font-size="13">p ≥ T2 ?</text>
+<text x="440.0" y="581.0" text-anchor="start" font-size="13">S408</text>
+<polyline points="345,545 345,575" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="345,689.0 465.0,731.0 345,773.0 225.0,731.0" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345" y="728.0" text-anchor="middle" font-size="13">p ≥ T1, or motion</text>
+<text x="345" y="744.0" text-anchor="middle" font-size="13">measure elevated?</text>
+<text x="471.0" y="719.0" text-anchor="start" font-size="13">S411</text>
+<polyline points="345,659 345,689" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="225.0" y="803" width="240" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="345.0" y="822.68" text-anchor="middle" font-size="13">State: NON-FALL;</text>
+<text x="345.0" y="838.68" text-anchor="middle" font-size="13">clear latch</text>
+<polyline points="453.0,803 445.0,794" fill="none" stroke="black" stroke-width="1"/>
+<text x="443.0" y="792" text-anchor="end" font-size="13">S413</text>
+<polyline points="345,773 345,803" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="353" y="271" text-anchor="start" font-size="12">Yes</text>
+<text x="353" y="679" text-anchor="start" font-size="12">No</text>
+<text x="353" y="793" text-anchor="start" font-size="12">No</text>
+<polyline points="225.0,209.0 18,209.0" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="219.0" y="203.0" text-anchor="end" font-size="12">No</text>
+<polyline points="225.0,826.0 18,826.0 18,48.0 225.0,48.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="465.0,617.0 515,617.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="490" y="611.0" text-anchor="middle" font-size="12">Yes</text>
+<rect x="515" y="594.0" width="175" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="602.5" y="613.68" text-anchor="middle" font-size="13">State:</text>
+<text x="602.5" y="629.68" text-anchor="middle" font-size="13">CONFIRMED FALL</text>
+<polyline points="678,594.0 670,585.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="668" y="583.0" text-anchor="end" font-size="13">S409</text>
+<rect x="515" y="670.0" width="175" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="602.5" y="681.68" text-anchor="middle" font-size="13">Send event once to</text>
+<text x="602.5" y="697.68" text-anchor="middle" font-size="13">agentic conversational</text>
+<text x="602.5" y="713.68" text-anchor="middle" font-size="13">layer 114</text>
+<polyline points="678,670.0 670,661.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="668" y="659.0" text-anchor="end" font-size="13">S410</text>
+<polyline points="602,640.0 602,670.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<ellipse cx="602" cy="766.0" rx="55" ry="20" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="602" y="771.0" text-anchor="middle" font-size="13">To FIG. 8 (S801)</text>
+<polyline points="602,716.0 602,746.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="225.0,731.0 185,731.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="205" y="725.0" text-anchor="middle" font-size="12">Yes</text>
+<rect x="45" y="708.0" width="140" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="115.0" y="727.68" text-anchor="middle" font-size="13">State:</text>
+<text x="115.0" y="743.68" text-anchor="middle" font-size="13">POSSIBLE FALL</text>
+<polyline points="173,708.0 165,699.0" fill="none" stroke="black" stroke-width="1"/>
+<text x="163" y="697.0" text-anchor="end" font-size="13">S412</text>
+<polyline points="45,731.0 18,731.0" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 4</text>
+</svg>

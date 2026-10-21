@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<rect x="225" y="20" width="260" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="355.0" y="39.68" text-anchor="middle" font-size="13">Labelled CSI</text>
+<text x="355.0" y="55.68" text-anchor="middle" font-size="13">amplitude windows</text>
+<polyline points="473,20 465,11" fill="none" stroke="black" stroke-width="1"/>
+<text x="463" y="9" text-anchor="end" font-size="13">601</text>
+<rect x="225" y="95" width="260" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="355.0" y="114.68" text-anchor="middle" font-size="13">Augmentation (time reversal,</text>
+<text x="355.0" y="130.68" text-anchor="middle" font-size="13">shift, scaling, noise)</text>
+<polyline points="473,95 465,86" fill="none" stroke="black" stroke-width="1"/>
+<text x="463" y="84" text-anchor="end" font-size="13">602</text>
+<rect x="225" y="170" width="260" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="355.0" y="192.68" text-anchor="middle" font-size="13">Class-weighted sampler</text>
+<polyline points="473,170 465,161" fill="none" stroke="black" stroke-width="1"/>
+<text x="463" y="159" text-anchor="end" font-size="13">603</text>
+<polyline points="355,66 355,95" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="355,141 355,170" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="355,206 355,228" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="355,228 355,250" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="355,228 115,228 115,250" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="20" y="250" width="190" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="115.0" y="269.68" text-anchor="middle" font-size="13">Teacher network</text>
+<text x="115.0" y="285.68" text-anchor="middle" font-size="13">(fixed)</text>
+<polyline points="198,250 190,241" fill="none" stroke="black" stroke-width="1"/>
+<text x="188" y="239" text-anchor="end" font-size="13">604</text>
+<rect x="260" y="250" width="190" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="355.0" y="269.68" text-anchor="middle" font-size="13">Student network</text>
+<text x="355.0" y="285.68" text-anchor="middle" font-size="13">(FallGuardNet)</text>
+<polyline points="438,250 430,241" fill="none" stroke="black" stroke-width="1"/>
+<text x="428" y="239" text-anchor="end" font-size="13">606</text>
+<rect x="20" y="340" width="190" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="115.0" y="359.68" text-anchor="middle" font-size="13">Teacher softened</text>
+<text x="115.0" y="375.68" text-anchor="middle" font-size="13">outputs</text>
+<polyline points="198,340 190,331" fill="none" stroke="black" stroke-width="1"/>
+<text x="188" y="329" text-anchor="end" font-size="13">605</text>
+<rect x="260" y="340" width="190" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="355.0" y="359.68" text-anchor="middle" font-size="13">Student softened</text>
+<text x="355.0" y="375.68" text-anchor="middle" font-size="13">outputs</text>
+<polyline points="438,340 430,331" fill="none" stroke="black" stroke-width="1"/>
+<text x="428" y="329" text-anchor="end" font-size="13">607</text>
+<polyline points="115,296 115,340" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="355,296 355,340" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="520" y="340" width="170" height="62" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="605.0" y="359.68" text-anchor="middle" font-size="13">Hard-label loss</text>
+<text x="605.0" y="375.68" text-anchor="middle" font-size="13">(class-weighted</text>
+<text x="605.0" y="391.68" text-anchor="middle" font-size="13">cross-entropy)</text>
+<polyline points="678,340 670,331" fill="none" stroke="black" stroke-width="1"/>
+<text x="668" y="329" text-anchor="end" font-size="13">609</text>
+<polyline points="450,262 560,262 560,340" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="485,188 620,188 620,340" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="626" y="270" text-anchor="start" font-size="12">labels</text>
+<rect x="80" y="450" width="340" height="56" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="250.0" y="474.68" text-anchor="middle" font-size="13">Distillation loss</text>
+<text x="250.0" y="490.68" text-anchor="middle" font-size="13">(KL divergence, T = 4)</text>
+<polyline points="408,450 400,441" fill="none" stroke="black" stroke-width="1"/>
+<text x="398" y="439" text-anchor="end" font-size="13">608</text>
+<polyline points="115,386 115,450" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="355,386 355,450" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="150" y="570" width="300" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="300.0" y="592.68" text-anchor="middle" font-size="13">Combined loss: α × 608 + (1 − α) × 609</text>
+<polyline points="438,570 430,561" fill="none" stroke="black" stroke-width="1"/>
+<text x="428" y="559" text-anchor="end" font-size="13">610</text>
+<polyline points="230,506 230,570" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="605,402 605,588 450,588" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="150" y="650" width="300" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="300.0" y="672.68" text-anchor="middle" font-size="13">Optimiser</text>
+<polyline points="438,650 430,641" fill="none" stroke="black" stroke-width="1"/>
+<text x="428" y="639" text-anchor="end" font-size="13">611</text>
+<polyline points="300,606 300,650" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="450,668 480,668 480,285 450,285" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+<text x="488" y="480" text-anchor="start" font-size="12">weight</text>
+<text x="488" y="496" text-anchor="start" font-size="12">update</text>
+<rect x="150" y="730" width="300" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="300.0" y="752.68" text-anchor="middle" font-size="13">Trained student network</text>
+<polyline points="438,730 430,721" fill="none" stroke="black" stroke-width="1"/>
+<text x="428" y="719" text-anchor="end" font-size="13">612</text>
+<polyline points="300,686 300,730" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="150" y="800" width="300" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="300.0" y="819.68" text-anchor="middle" font-size="13">Export to ONNX;</text>
+<text x="300.0" y="835.68" text-anchor="middle" font-size="13">deploy on edge unit</text>
+<polyline points="438,800 430,791" fill="none" stroke="black" stroke-width="1"/>
+<text x="428" y="789" text-anchor="end" font-size="13">613</text>
+<polyline points="300,766 300,800" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 6</text>
+</svg>

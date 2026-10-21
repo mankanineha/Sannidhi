@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<rect x="160.0" y="30" width="380" height="54" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="53.68" text-anchor="middle" font-size="13">Connect to access point as station;</text>
+<text x="350.0" y="69.68" text-anchor="middle" font-size="13">disable Wi-Fi power saving</text>
+<polyline points="528.0,30 520.0,21" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="19" text-anchor="end" font-size="13">S301</text>
+<rect x="160.0" y="114" width="380" height="54" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="137.68" text-anchor="middle" font-size="13">Enable CSI reporting;</text>
+<text x="350.0" y="153.68" text-anchor="middle" font-size="13">register CSI callback</text>
+<polyline points="528.0,114 520.0,105" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="103" text-anchor="end" font-size="13">S302</text>
+<polyline points="350,84 350,114" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="198" width="380" height="54" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="221.68" text-anchor="middle" font-size="13">Receive data frame;</text>
+<text x="350.0" y="237.68" text-anchor="middle" font-size="13">callback invoked</text>
+<polyline points="528.0,198 520.0,189" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="187" text-anchor="end" font-size="13">S303</text>
+<polyline points="350,168 350,198" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="282" width="380" height="38" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="305.68" text-anchor="middle" font-size="13">Read 64 complex (I, Q) samples</text>
+<polyline points="528.0,282 520.0,273" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="271" text-anchor="end" font-size="13">S304</text>
+<polyline points="350,252 350,282" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="350" width="380" height="54" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="373.68" text-anchor="middle" font-size="13">Compute amplitude per sample:</text>
+<text x="350.0" y="389.68" text-anchor="middle" font-size="13">square root of (I² + Q²)</text>
+<polyline points="528.0,350 520.0,341" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="339" text-anchor="end" font-size="13">S305</text>
+<polyline points="350,320 350,350" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="434" width="380" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="457.68" text-anchor="middle" font-size="13">Keep 52 active subcarriers (bins 38–63</text>
+<text x="350.0" y="473.68" text-anchor="middle" font-size="13">and 1–26); if first word invalid,</text>
+<text x="350.0" y="489.68" text-anchor="middle" font-size="13">replace bin 1 by bin 2</text>
+<polyline points="528.0,434 520.0,425" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="423" text-anchor="end" font-size="13">S306</text>
+<polyline points="350,404 350,434" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="534" width="380" height="54" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="557.68" text-anchor="middle" font-size="13">Form frame (timestamp, frame number,</text>
+<text x="350.0" y="573.68" text-anchor="middle" font-size="13">52 amplitudes); put on bounded queue</text>
+<polyline points="528.0,534 520.0,525" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="523" text-anchor="end" font-size="13">S307</text>
+<polyline points="350,504 350,534" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="618" width="380" height="38" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="641.68" text-anchor="middle" font-size="13">Writer task dequeues frame</text>
+<polyline points="528.0,618 520.0,609" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="607" text-anchor="end" font-size="13">S308</text>
+<polyline points="350,588 350,618" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="160.0" y="686" width="380" height="54" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="709.68" text-anchor="middle" font-size="13">Transmit frame as UDP datagram to</text>
+<text x="350.0" y="725.68" text-anchor="middle" font-size="13">edge processing unit</text>
+<polyline points="528.0,686 520.0,677" fill="none" stroke="black" stroke-width="1"/>
+<text x="518.0" y="675" text-anchor="end" font-size="13">S309</text>
+<polyline points="350,656 350,686" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="540.0,713.0 595,713.0 595,225.0 540.0,225.0" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="630" y="442.0" text-anchor="middle" font-size="13">next frame</text>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 3</text>
+</svg>

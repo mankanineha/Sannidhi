@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<g transform="translate(0,120)">
+<rect x="40" y="80" width="620" height="470" fill="none" stroke="black" stroke-width="3"/>
+<polyline points="648,80 640,71" fill="none" stroke="black" stroke-width="1"/>
+<text x="638" y="69" text-anchor="end" font-size="13">202</text>
+<rect x="130" y="505" width="160" height="45" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="130" y="465" width="160" height="42" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="113" y="490" width="18" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="289" y="490" width="18" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="500" y="460" width="160" height="8" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="510" y="468" width="8" height="82" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="642" y="468" width="8" height="82" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="504" y="392" width="152" height="68" fill="white" stroke="black" stroke-width="2"/>
+<rect x="508" y="396" width="70" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="543.0" y="422.82" text-anchor="middle" font-size="12">Edge</text>
+<text x="543.0" y="437.82" text-anchor="middle" font-size="12">unit</text>
+<rect x="582" y="396" width="70" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="617.0" y="422.96" text-anchor="middle" font-size="11">Voice</text>
+<text x="617.0" y="436.96" text-anchor="middle" font-size="11">interface</text>
+<polyline points="543,375 543,396" fill="none" stroke="black" stroke-width="1"/>
+<text x="543" y="368" text-anchor="middle" font-size="13">104</text>
+<polyline points="617,375 617,396" fill="none" stroke="black" stroke-width="1"/>
+<text x="617" y="368" text-anchor="middle" font-size="13">105</text>
+<rect x="40" y="250" width="100" height="8" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="52" y="212" width="70" height="38" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="87.0" y="227.82" text-anchor="middle" font-size="12">Sensing</text>
+<text x="87.0" y="242.82" text-anchor="middle" font-size="12">node</text>
+<polyline points="60,212 54,205" fill="none" stroke="black" stroke-width="1"/>
+<text x="46" y="200" text-anchor="start" font-size="13">101</text>
+<polyline points="87,212 87,188" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="76,176 87,188 98,176" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="98,182 110,176" fill="none" stroke="black" stroke-width="1"/>
+<text x="112" y="175" text-anchor="start" font-size="13">102</text>
+<rect x="560" y="250" width="100" height="8" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="575" y="215" width="70" height="35" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="610.0" y="229.32" text-anchor="middle" font-size="12">Access</text>
+<text x="610.0" y="244.32" text-anchor="middle" font-size="12">point</text>
+<polyline points="612,215 612,207" fill="none" stroke="black" stroke-width="1"/>
+<text x="612" y="203" text-anchor="middle" font-size="13">103</text>
+<polyline points="575,235 380,532 87,192" fill="none" stroke="black" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="275,415 315,435" fill="none" stroke="black" stroke-width="1"/>
+<text x="270" y="412" text-anchor="end" font-size="13">203</text>
+<circle cx="355" cy="535" r="14" fill="white" stroke="black" stroke-width="1.5"/>
+<polyline points="369,535 432,535" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="380,535 398,524 418,524" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="380,535 398,545 418,545" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="432,535 456,527 482,530" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="432,535 456,545 482,545" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="335,498 355,521" fill="none" stroke="black" stroke-width="1"/>
+<text x="330" y="495" text-anchor="end" font-size="13">201</text>
+</g>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 2</text>
+</svg>

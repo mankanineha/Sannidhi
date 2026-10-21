@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<rect x="160" y="60" width="380" height="560" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="80" text-anchor="middle" font-size="13">Agentic conversational layer</text>
+<polyline points="528,60 520,51" fill="none" stroke="black" stroke-width="1"/>
+<text x="518" y="49" text-anchor="end" font-size="13">114</text>
+<rect x="260" y="15" width="180" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="35.68" text-anchor="middle" font-size="13">Decision module</text>
+<polyline points="260,25 251,18" fill="none" stroke="black" stroke-width="1"/>
+<text x="249" y="22" text-anchor="end" font-size="13">113</text>
+<polyline points="350,47 350,85" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="260" y="85" width="180" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="105.68" text-anchor="middle" font-size="13">Event interface</text>
+<polyline points="440,95 449,88" fill="none" stroke="black" stroke-width="1"/>
+<text x="451" y="92" text-anchor="start" font-size="13">701</text>
+<polyline points="350,117 350,145" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="260" y="145" width="180" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="165.68" text-anchor="middle" font-size="13">Incident manager</text>
+<polyline points="428,145 420,136" fill="none" stroke="black" stroke-width="1"/>
+<text x="418" y="134" text-anchor="end" font-size="13">702</text>
+<polyline points="315,177 255,205" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="385,177 445,205" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="180" y="205" width="150" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="255.0" y="225.68" text-anchor="middle" font-size="13">Incident store</text>
+<polyline points="318,205 310,196" fill="none" stroke="black" stroke-width="1"/>
+<text x="308" y="194" text-anchor="end" font-size="13">703</text>
+<rect x="360" y="205" width="170" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="445.0" y="225.68" text-anchor="middle" font-size="13">Conversation state machine</text>
+<polyline points="518,205 510,196" fill="none" stroke="black" stroke-width="1"/>
+<text x="508" y="194" text-anchor="end" font-size="13">704</text>
+<rect x="360" y="265" width="170" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="445.0" y="285.68" text-anchor="middle" font-size="13">Speech synthesis engine</text>
+<polyline points="518,265 510,256" fill="none" stroke="black" stroke-width="1"/>
+<text x="508" y="254" text-anchor="end" font-size="13">705</text>
+<polyline points="445,237 445,265" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="575" y="265" width="105" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="627.5" y="285.68" text-anchor="middle" font-size="13">Speaker</text>
+<polyline points="668,265 660,256" fill="none" stroke="black" stroke-width="1"/>
+<text x="658" y="254" text-anchor="end" font-size="13">105b</text>
+<polyline points="530,281 575,281" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="180" y="265" width="150" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="255.0" y="285.68" text-anchor="middle" font-size="13">Scheduler (optional)</text>
+<polyline points="318,265 310,256" fill="none" stroke="black" stroke-width="1"/>
+<text x="308" y="254" text-anchor="end" font-size="13">710</text>
+<polyline points="330,281 360,281" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="20" y="335" width="105" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="72.5" y="355.68" text-anchor="middle" font-size="13">Microphone</text>
+<polyline points="113,335 105,326" fill="none" stroke="black" stroke-width="1"/>
+<text x="103" y="324" text-anchor="end" font-size="13">105a</text>
+<polyline points="125,351 180,351" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="180" y="335" width="150" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="255.0" y="355.68" text-anchor="middle" font-size="13">Voice activity detector</text>
+<polyline points="318,335 310,326" fill="none" stroke="black" stroke-width="1"/>
+<text x="308" y="324" text-anchor="end" font-size="13">706</text>
+<polyline points="330,351 365,351" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="365" y="335" width="165" height="32" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="447.5" y="355.68" text-anchor="middle" font-size="13">Speech-to-text engine</text>
+<polyline points="518,335 510,326" fill="none" stroke="black" stroke-width="1"/>
+<text x="508" y="324" text-anchor="end" font-size="13">707</text>
+<polyline points="447,367 447,395" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="365" y="395" width="165" height="42" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="447.5" y="412.68" text-anchor="middle" font-size="13">Interpretation module</text>
+<text x="447.5" y="428.68" text-anchor="middle" font-size="13">(language model)</text>
+<polyline points="518,395 510,386" fill="none" stroke="black" stroke-width="1"/>
+<text x="508" y="384" text-anchor="end" font-size="13">708</text>
+<polyline points="530,416 545,416 545,221 530,221" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="260" y="480" width="180" height="34" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="493.68" text-anchor="middle" font-size="13">Safety-policy controller</text>
+<text x="350.0" y="509.68" text-anchor="middle" font-size="13">(rule-based)</text>
+<polyline points="428,480 420,471" fill="none" stroke="black" stroke-width="1"/>
+<text x="418" y="469" text-anchor="end" font-size="13">709</text>
+<polyline points="380,237 380,480" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="350,514 350,660" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="360" y="580" text-anchor="start" font-size="13">escalate</text>
+<rect x="250" y="660" width="200" height="34" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="681.68" text-anchor="middle" font-size="13">Escalation module</text>
+<polyline points="250,670 241,663" fill="none" stroke="black" stroke-width="1"/>
+<text x="239" y="667" text-anchor="end" font-size="13">115</text>
+<polyline points="350,694 350,725" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="250" y="725" width="200" height="34" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="746.68" text-anchor="middle" font-size="13">Messaging service</text>
+<polyline points="250,735 241,728" fill="none" stroke="black" stroke-width="1"/>
+<text x="239" y="732" text-anchor="end" font-size="13">109</text>
+<polyline points="350,759 350,790" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="230" y="790" width="240" height="36" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="350.0" y="812.68" text-anchor="middle" font-size="13">Caregiver device (application 107)</text>
+<polyline points="230,800 221,793" fill="none" stroke="black" stroke-width="1"/>
+<text x="219" y="797" text-anchor="end" font-size="13">108</text>
+<polyline points="350,826 350,826" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 7</text>
+</svg>

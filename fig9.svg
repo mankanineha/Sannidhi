@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 700 940" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="black">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="black"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="black" stroke-width="2"/></pattern>
+</defs>
+<rect width="700" height="940" fill="white"/>
+<text x="20" y="35" text-anchor="start" font-size="15" font-weight="bold">(a)</text>
+<text x="335.0" y="68" text-anchor="middle" font-size="13">Predicted non-fall</text>
+<text x="465.0" y="68" text-anchor="middle" font-size="13">Predicted fall</text>
+<text x="260" y="120.0" text-anchor="end" font-size="13">Actual non-fall</text>
+<text x="260" y="190.0" text-anchor="end" font-size="13">Actual fall</text>
+<rect x="270" y="80" width="130" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="272" y="82" width="126" height="66" fill="url(#hatch)"/>
+<rect x="313.0" y="97.0" width="44" height="30" fill="white"/>
+<text x="335.0" y="123.0" text-anchor="middle" font-size="24" font-weight="bold">60</text>
+<rect x="400" y="80" width="130" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="443.0" y="97.0" width="44" height="30" fill="white"/>
+<text x="465.0" y="123.0" text-anchor="middle" font-size="24" font-weight="bold">0</text>
+<rect x="270" y="150" width="130" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="313.0" y="167.0" width="44" height="30" fill="white"/>
+<text x="335.0" y="193.0" text-anchor="middle" font-size="24" font-weight="bold">2</text>
+<rect x="400" y="150" width="130" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+<rect x="402" y="152" width="126" height="66" fill="url(#hatch)"/>
+<rect x="443.0" y="167.0" width="44" height="30" fill="white"/>
+<text x="465.0" y="193.0" text-anchor="middle" font-size="24" font-weight="bold">8</text>
+<text x="20" y="285" text-anchor="start" font-size="15" font-weight="bold">(b)</text>
+<text x="20" y="303" text-anchor="start" font-size="13">Model</text>
+<text x="207" y="327" text-anchor="end" font-size="13">MLP</text>
+<rect x="215" y="316" width="195.65" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="416.65" y="327" text-anchor="start" font-size="12">0.455</text>
+<text x="207" y="349" text-anchor="end" font-size="13">CNN</text>
+<rect x="215" y="338" width="241.66000000000003" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="462.66" y="349" text-anchor="start" font-size="12">0.562</text>
+<text x="207" y="371" text-anchor="end" font-size="13">GRU</text>
+<rect x="215" y="360" width="204.67999999999998" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="425.67999999999995" y="371" text-anchor="start" font-size="12">0.476</text>
+<text x="207" y="393" text-anchor="end" font-size="13">LSTM</text>
+<rect x="215" y="382" width="138.03" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="359.03" y="393" text-anchor="start" font-size="12">0.321</text>
+<text x="207" y="415" text-anchor="end" font-size="13">Transformer</text>
+<rect x="215" y="404" width="286.81" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="507.81" y="415" text-anchor="start" font-size="12">0.667</text>
+<text x="207" y="437" text-anchor="end" font-size="13">MobileNetV3</text>
+<rect x="215" y="426" width="322.5" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="543.5" y="437" text-anchor="start" font-size="12">0.750</text>
+<text x="207" y="459" text-anchor="end" font-size="13">FallGuardNet first version</text>
+<rect x="215" y="448" width="286.81" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="507.81" y="459" text-anchor="start" font-size="12">0.667</text>
+<text x="207" y="481" text-anchor="end" font-size="13">FallGuardNet</text>
+<rect x="215" y="470" width="382.27" height="14" fill="url(#hatch)" stroke="black" stroke-width="1.2"/>
+<text x="603.27" y="481" text-anchor="start" font-size="12">0.889</text>
+<polyline points="215,313 215,489 675,489" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="215.0,489 215.0,494" fill="none" stroke="black" stroke-width="1"/>
+<text x="215.0" y="509" text-anchor="middle" font-size="12">0.0</text>
+<polyline points="301.0,489 301.0,494" fill="none" stroke="black" stroke-width="1"/>
+<text x="301.0" y="509" text-anchor="middle" font-size="12">0.2</text>
+<polyline points="387.0,489 387.0,494" fill="none" stroke="black" stroke-width="1"/>
+<text x="387.0" y="509" text-anchor="middle" font-size="12">0.4</text>
+<polyline points="473.00000000000006,489 473.00000000000006,494" fill="none" stroke="black" stroke-width="1"/>
+<text x="473.00000000000006" y="509" text-anchor="middle" font-size="12">0.6</text>
+<polyline points="559.0,489 559.0,494" fill="none" stroke="black" stroke-width="1"/>
+<text x="559.0" y="509" text-anchor="middle" font-size="12">0.8</text>
+<polyline points="645.0,489 645.0,494" fill="none" stroke="black" stroke-width="1"/>
+<text x="645.0" y="509" text-anchor="middle" font-size="12">1.0</text>
+<text x="430.0" y="529" text-anchor="middle" font-size="13">F1 score</text>
+<text x="20" y="575" text-anchor="start" font-size="15" font-weight="bold">(c)</text>
+<text x="20" y="593" text-anchor="start" font-size="13">Model</text>
+<text x="207" y="617" text-anchor="end" font-size="13">MLP</text>
+<rect x="215" y="606" width="379.69" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="600.69" y="617" text-anchor="start" font-size="12">0.883</text>
+<text x="207" y="639" text-anchor="end" font-size="13">CNN</text>
+<rect x="215" y="628" width="336.69" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="557.69" y="639" text-anchor="start" font-size="12">0.783</text>
+<text x="207" y="661" text-anchor="end" font-size="13">GRU</text>
+<rect x="215" y="650" width="387.0" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="608.0" y="661" text-anchor="start" font-size="12">0.900</text>
+<text x="207" y="683" text-anchor="end" font-size="13">LSTM</text>
+<rect x="215" y="672" width="164.69" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="385.69" y="683" text-anchor="start" font-size="12">0.383</text>
+<text x="207" y="705" text-anchor="end" font-size="13">Transformer</text>
+<rect x="215" y="694" width="372.81" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="593.81" y="705" text-anchor="start" font-size="12">0.867</text>
+<text x="207" y="727" text-anchor="end" font-size="13">MobileNetV3</text>
+<rect x="215" y="716" width="394.31" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="615.31" y="727" text-anchor="start" font-size="12">0.917</text>
+<text x="207" y="749" text-anchor="end" font-size="13">FallGuardNet first version</text>
+<rect x="215" y="738" width="372.81" height="14" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="593.81" y="749" text-anchor="start" font-size="12">0.867</text>
+<text x="207" y="771" text-anchor="end" font-size="13">FallGuardNet</text>
+<rect x="215" y="760" width="430.0" height="14" fill="url(#hatch)" stroke="black" stroke-width="1.2"/>
+<text x="651.0" y="771" text-anchor="start" font-size="12">1.000</text>
+<polyline points="215,603 215,779 675,779" fill="none" stroke="black" stroke-width="1.5"/>
+<polyline points="215.0,779 215.0,784" fill="none" stroke="black" stroke-width="1"/>
+<text x="215.0" y="799" text-anchor="middle" font-size="12">0.0</text>
+<polyline points="301.0,779 301.0,784" fill="none" stroke="black" stroke-width="1"/>
+<text x="301.0" y="799" text-anchor="middle" font-size="12">0.2</text>
+<polyline points="387.0,779 387.0,784" fill="none" stroke="black" stroke-width="1"/>
+<text x="387.0" y="799" text-anchor="middle" font-size="12">0.4</text>
+<polyline points="473.00000000000006,779 473.00000000000006,784" fill="none" stroke="black" stroke-width="1"/>
+<text x="473.00000000000006" y="799" text-anchor="middle" font-size="12">0.6</text>
+<polyline points="559.0,779 559.0,784" fill="none" stroke="black" stroke-width="1"/>
+<text x="559.0" y="799" text-anchor="middle" font-size="12">0.8</text>
+<polyline points="645.0,779 645.0,784" fill="none" stroke="black" stroke-width="1"/>
+<text x="645.0" y="799" text-anchor="middle" font-size="12">1.0</text>
+<text x="430.0" y="819" text-anchor="middle" font-size="13">Specificity</text>
+<text x="350" y="922" text-anchor="middle" font-size="22" font-weight="bold">FIG. 9</text>
+</svg>
